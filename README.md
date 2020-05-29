@@ -1,6 +1,6 @@
 # django_library
 Hufs_IA Django project with local library
-<br><br>
+### UML of Model
 ![libraryUML](./readmeImage/libraryUML.PNG) <br>
 ### UML 설명
 #### BOOK Table
