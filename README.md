@@ -27,3 +27,8 @@ Hufs_IA Django project with local library
 * due_back : 반납 기간
 * status : 책을 대여했는지 책장에 꼽혀있는지의 상태 표시
 * book : Book Table에 포함됨
+
+### Django 명령어
+> python manage.py makemigrations <br>
+> python manage.py migrate <br>
+> : Database에 Table을 넣는 과정
