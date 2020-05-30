@@ -25,4 +25,5 @@ urlpatterns = [
     path('catalog/', include('catalog.urls')),
     # path('', views.index, name='index'),
     path('', RedirectView.as_view(url='/catalog/', permanent=True)),  #url을 catalog로 돌려라
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
+# ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
