@@ -19,21 +19,19 @@ def index(request):
     num_visits = request.session.get('num_visits', 0)
     request.session['num_visits'] = num_visits + 1
 
-    context = {
-        'num_books': num_books,
-        'num_instances': num_instances,
-        'num_instances_available': num_instances_available,
-        'num_authors': num_authors,
-        'num_visits': num_visits,
-    }
+    
     # Render the HTML template index.html with the data in the context variable
     return render(
         request, 
         'index.html', 
-        context={'num_books': num_books, 'num_instances': num_instances,
-                 'num_instances_available': num_instances_available, 'num_authors': num_authors,
-                 'num_visits': num_visits},
-        )
+        context = {
+        'num_books': num_books,
+        'num_instances': num_instances,
+        'num_instances_available': num_instances_available,
+        'num_authors': num_authors,
+        'num_visits': num_visits
+        },
+    )
 
 from django.views import generic
 
@@ -110,7 +108,7 @@ def renew_book_librarian(request, pk):
             # book_renewal_form.cleaned_data 데이타를 요청받은대로 처리한다(여기선 그냥 모델 due_back 필드에 써넣는다)
             book_inst.due_back = book_renewal_form.cleaned_data['renewal_date']
             book_inst.save()
-
+            
             # 새로운 URL로 보낸다:
             return HttpResponseRedirect(reverse('all-borrowed') )
 
